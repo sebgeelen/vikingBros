@@ -1,0 +1,25 @@
+{
+  "name": "vikingbros",
+  "version": "0.0.0",
+  "description": "Save teh viking game",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://oliviercuyp@bitbucket.org/sgeelen/vikingbros.git"
+  },
+  "keywords": [
+    "game",
+    "viking",
+    "mobile"
+  ],
+  "author": "Woorank Team & Co",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "express": "~3.4.8",
+    "mysql": "~2.0.1"
+  }
+}
