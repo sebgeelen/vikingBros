@@ -1,6 +1,7 @@
 @font-face{font-family:eightbit;src:url("../fonts/8-bit-wonder.ttf");}body{font-family:eightbit,"sans-serif";background:#bde6f7 url("../img/bg.png") bottom center repeat-x;text-align:center;margin:0;padding:0;position:relative;}
 #container{overflow:hidden;font-family:eightbit,"sans-serif";background:url("../img/see.png") bottom center repeat-x;height:100%;width:100%;}
 #logo{min-height:40px;margin:20px auto 30px;color:#333;width:80%;max-width:400px;cursor:pointer;}#logo img{width:100%;height:auto;}
+#logo .hidden-img{display:none;}
 #game-screen{position:relative;}#game-screen iframe{width:100%;height:100%;}
 button{font-family:eightbit,"sans-serif";background-color:#d13532;color:#fff;border:none;-webkit-border-radius:3px;border-radius:3px;width:80%;height:60px;font-size:14px;line-height:60px;margin:20px 0;box-shadow:3px 3px 0 #96201d;cursor:pointer;}button:hover{background-color:#b1211e;box-shadow:1px 1px 0 #96201d;}
 #login-button{margin-top:80px;height:80px;line-height:80px;font-size:24px;}
