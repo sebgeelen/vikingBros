@@ -28,6 +28,7 @@ $(function() {
       method: 'POST',
       data: "token=" + fbToken,
       success: function(data) {
+        console.log(data);
         console.log("fb url sent");
       }
     });
