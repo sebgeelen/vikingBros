@@ -3,10 +3,9 @@
 var config = require('config');
 var crypto = require('crypto');
 
-var md5sum = crypto.createHash('md5');
-
 function getAuthUrl(req, res) {
-  var scope = 'read_insights,manage_pages';
+  var scope = 'read_insights,manage_pages,read_friendlists';
+  var md5sum = crypto.createHash('md5');
 
   var result = {
     authUrl: 'https://www.facebook.com/dialog/oauth' +
