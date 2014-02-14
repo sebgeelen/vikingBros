@@ -8,5 +8,5 @@ h1{font-size:18px;color:#333333;}
 h2{color:#fff;font-size:14px;cursor:pointer;background-color:#d13532;padding:12px;}h2:hover{background-color:#b1211e;}
 ul{text-align:left;padding:0;margin:8px 0 16px;list-style-type:none;overflow:hidden;-webkit-transition:height .2s;transition:height .2s;height:138px;}ul.hidden-list{height:0;margin:0;}
 li{padding-bottom:4px;margin:0 5% 4px;border-bottom:2px solid rgba(0, 0, 0, 0.5);color:#333;}
-li span{display:inline-block;}li span.name{width:80%;}
-li span.score{width:20%;}
+li span{display:inline-block;}li span:first-child{width:80%;}
+li span:last-child{width:20%;}
