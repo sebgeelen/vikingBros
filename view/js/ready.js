@@ -13,8 +13,8 @@ function getParameterByName(name) {
 }
 
 function changeScreenTo(idName) {
-    $('.screen').addClass("hidden-screen");
-    $("#" + idName).removeClass("hidden-screen");
+  $('.screen').addClass("hidden-screen");
+  $("#" + idName).removeClass("hidden-screen");
 }
 
 var user = null;
@@ -31,6 +31,9 @@ function loadAllUserData () {
   });
 }
 
+var goldArray = [],
+    bestArray = [],
+    totalArray = [];
 function calculLeaderBoard() {
   $.ajax({
     url: '/api/friendlist/' + userId,
@@ -39,7 +42,13 @@ function calculLeaderBoard() {
     success: function(data) {
       user = data;
       console.log("get user data");
-      changeScreenTo('menu-screen');
+
+      for (var i = data.length - 1; i >= 0; i--) {
+        goldArray[data[i].score_total] = {"name" : data[i].name, "i" : data[i].score_total};
+        bestArray[data[i].distance_best] = {"name" : data[i].name, "i" : data[i].distance_best};
+        totalArray[data[i].distance_total] = {"name" : data[i].name, "i" : data[i].distance_total};
+      }
+
     }
   });
 }
