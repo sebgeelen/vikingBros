@@ -20,6 +20,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "express": "~3.4.8",
-    "mysql": "~2.0.1"
+    "mysql": "~2.0.1",
+    "config": "~0.4.35"
   }
 }

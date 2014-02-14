@@ -1,0 +1,6 @@
+{
+  "facebook": {
+    "appId": 123,
+    "redirectUri": "http://localhost/facebook/callback"
+  }
+}
