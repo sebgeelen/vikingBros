@@ -6,7 +6,7 @@ var pool = null;
 function getConnection(callback) {
     if (!pool) {
 
-        log.info('Connecting to ' + config.mysql.host + ' with ' + config.mysql.user);
+        console.log('Connecting to ' + config.mysql.host + ' with ' + config.mysql.user);
 
         pool = mysql.createPool(config.mysql);
 
