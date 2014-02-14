@@ -81,9 +81,9 @@ $(function() {
       window.location.href = $(this).text("loading ...").data("href");
       //
     });
-    // get fb url
 
-    window.location.href = '/?code=qsdfghjkl';
+    // get fb url
+    window.location.href = '/?code=facebook';
     /*
     $.ajax({
       url: '/api/facebook',
