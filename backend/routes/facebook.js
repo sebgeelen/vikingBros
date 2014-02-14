@@ -2,8 +2,8 @@
 
 var Q = require('q');
 var facebookSvc = require('../services/facebook');
-var usersSvc = require('../services/users');
-var friendsSvc = require('../services/friends');
+//var usersSvc = require('../services/users');
+//var friendsSvc = require('../services/friends');
 
 function getAuthUrl(req, res) {
   res.json(200, facebookSvc.getAuthUrl());
@@ -19,11 +19,11 @@ function createUserFromFbCode(req, res) {
     var promises = [
       Q.ninvoke(facebookSvc, 'getUserInfo', token)
         .then(function (err, userInfo) {
-
+          return true;
         }),
       Q.ninvoke(facebookSvc, 'getUserFriends', token)
         .then(function (err, userInfo) {
-
+          return true;
         })
     ];
 
