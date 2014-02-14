@@ -21,6 +21,7 @@ app.configure(function () {
   app.get('/api/users/:id', users.getInfo);
 	app.put('/api/users/:id', users.setInfo);
   app.get('/api/friendlist/:id', users.getFriends);
+/*  app.get('/api/test', users.test)*/
 });
 
 app.listen(port);

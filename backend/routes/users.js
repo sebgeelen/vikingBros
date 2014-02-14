@@ -52,16 +52,17 @@ function setFriends(req, res){
 	});
 }
 
-
-function createFriendLink(req, res){
-	friendService.createFriendLink(req.body, function (err, data){
+/*function test(req, res){
+	friendService.createFriendLink(["12345", "123456"], 1, function (err, data){
 		if (err){
 			res.send(500, err)
 			return;
 		}
 		res.json(200, data);
 	});
-}
+}*/
+
+
 
 
 
@@ -71,5 +72,5 @@ module.exports = {
   createInfo: createInfo,
   getFriends: getFriends,
   setFriends: setFriends,
-  createFriendLink: createFriendLink
+/*  test: test*/
 };

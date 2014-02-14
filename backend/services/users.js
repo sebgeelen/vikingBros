@@ -54,6 +54,23 @@ function createInfo(userData, callback){
 	})
 }
 
+function getInfoByFbId(userFbId, callback){
+	mysql.getConnection(function(err, connection){
+		if (err){
+			callback(err, null);
+			return;
+		}
+		connection.query('SELECT * FROM users WHERE facebook_id = ?', [userFbId], function(err, rows, fields) {
+			if (err){
+				callback(err, null);
+				return;
+			}
+			connection.release();
+			callback(null, rows);
+		});			
+	})
+}
+
 
 module.exports = {
   getInfo: getInfo,
