@@ -1,4 +1,3 @@
-
 function getParameterByName(name) {
   var regex, regexS, results;
   name    = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
@@ -113,7 +112,7 @@ $(function() {
     e.preventDefault();
     changeScreenTo('game-screen');
     $("#logo").hide();
-    window.location.href = "http://olivierkaisin.co/test";
+    window.location.href = "http://olivierkaisin.co.s3.amazonaws.com/test/index.html";
     // startGame();
   });
   $('#lb-button').on('click', function(e) {
