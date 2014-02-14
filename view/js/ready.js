@@ -15,6 +15,7 @@ function getParameterByName(name) {
 function changeScreenTo(idName) {
   $('.screen').addClass("hidden-screen");
   $("#" + idName).removeClass("hidden-screen");
+  $("#logo").show();
 }
 
 var user = null;
@@ -107,6 +108,7 @@ $(function() {
   $('#play-button').on('click', function(e) {
     e.preventDefault();
     changeScreenTo('game-screen');
+    $("#logo").hide();
     // startGame();
   });
   $('#lb-button').on('click', function(e) {
