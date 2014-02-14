@@ -1,6 +1,7 @@
 module.exports = (grunt) ->
 
   grunt.loadNpmTasks 'grunt-contrib-less'
+  grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.task.loadNpmTasks 'grunt-contrib-watch'
 
   grunt.initConfig
@@ -12,6 +13,12 @@ module.exports = (grunt) ->
         cwd: ''
         src: ['./view/css/css.less']
         dest: './view/css/css.css'
+
+    connect:
+      server:
+        options:
+          port: 3332
+          open: true
 
     watch:
       less:
