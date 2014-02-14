@@ -57,7 +57,7 @@ $(function() {
       data: "code=" + fbToken,
       success: function(data) {
         console.log("fb url sent");
-        userId = data.userId;
+        userId = data.id;
         loadAllUserData();
       }
     });
@@ -91,6 +91,10 @@ $(function() {
   });
 
   // button
+  $('#logo').on('click', function(e) {
+    e.preventDefault();
+    changeScreenTo('menu-screen');
+  });
   $('#play-button').on('click', function(e) {
     e.preventDefault();
     changeScreenTo('game-screen');

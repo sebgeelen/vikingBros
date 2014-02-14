@@ -1,3 +1,8 @@
+@colorDark : #96201d;
+@colorMid: #b1211e;
+@colorLight: #d13532;
+
+
 /* 8 bit font */
 @font-face
 {
@@ -13,6 +18,7 @@
 
 body {
   font-family: eightbit, "sans-serif";
+  background: #bde6f7 url("../img/bg.png") bottom center repeat-x;
   text-align: center;
   margin: 0;
   padding: 0;
@@ -30,16 +36,21 @@ body {
 /* ------- logo */
 #logo {
   min-height: 40px;
-  margin: 20px 0 30px;
-  background: #999;
+  margin: 20px auto 30px;
   color: #333;
+  width: 80%;
+  max-width: 400px;
   cursor: pointer;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* ------- UI components */
 button {
   font-family: eightbit, "sans-serif";
-  background-color: #920;
+  background-color: @colorLight;
   color: #fff;
   border: none;
   .radius();
@@ -48,14 +59,17 @@ button {
   font-size: 14px;
   line-height: 60px;
   margin: 20px 0;
-  box-shadow: 3px 3px 0 #5d1804;
+  box-shadow: 3px 3px 0 @colorDark;
   cursor: pointer;
   &:hover {
-    background-color: #a80303;
-    box-shadow: 1px 1px 0 #5d1804;
+    background-color: @colorMid;
+    box-shadow: 1px 1px 0 @colorDark;
   }
 }
 #login-button {
+  margin-top: 80px;
+  height: 80px;
+  line-height: 80px;
   font-size: 24px;
 }
 
@@ -74,10 +88,10 @@ h2 {
   color: #fff;
   font-size: 14px;
   cursor: pointer;
-  background-color: #920;
+  background-color: @colorLight;
   padding: 12px;
   &:hover {
-    background-color: #a80303;
+    background-color: @colorMid;
   }
 }
 
@@ -101,15 +115,15 @@ ul {
 li {
   padding-bottom: 4px;
   margin: 0 5% 4px;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
   color: #333;
 }
 li span{
   display: inline-block;
-  &:first-child {
+  &.name {
     width: 80%;
   }
-  &:last-child {
+  &.score {
     width: 20%;
   }
 }
