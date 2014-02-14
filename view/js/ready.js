@@ -33,7 +33,7 @@ function loadAllUserData () {
 
 function calculLeaderBoard() {
   $.ajax({
-    url: '/api/friendslist/' + userId,
+    url: '/api/friendlist/' + userId,
     dataType: 'json',
     method: 'GET',
     success: function(data) {
