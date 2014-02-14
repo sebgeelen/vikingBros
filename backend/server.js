@@ -7,8 +7,8 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(express.compress());
-app.use(express.static(__dirname + '/view'/*, { maxAge: 86400000 } */)); // 1 day max age
 app.use(express.bodyParser());
+app.use(express.static(__dirname + '/../view'/*, { maxAge: 86400000 } */)); // 1 day max age
 
 app.configure(function () {
 
@@ -16,10 +16,11 @@ app.configure(function () {
   var users = require('./routes/users');
 
   // routes
-  app.get('/facebook', facebook.getAuthUrl);
-  app.get('/users/:id', users.getInfo);
-  app.put('/users/:id', users.setInfo);
-  app.get('/friendlist/:id', users.getFriends);
+  app.get('/api/facebook', facebook.getAuthUrl);
+  app.post('/api/facebook', facebook.createUserFromFbCode);
+  app.get('/api/users/:id', users.getInfo);
+	app.put('/api/users/:id', users.setInfo);
+  app.get('/api/friendlist/:id', users.getFriends);
 });
 
 app.listen(port);

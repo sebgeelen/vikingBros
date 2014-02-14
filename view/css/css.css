@@ -1,5 +1,5 @@
-@font-face{font-family:eightbit;src:url("../fonts/8-bit-wonder.ttf");}body{font-family:eightbit,"sans-serif";text-align:center;}
-#container{width:320px;height:480px;overflow:hidden;font-family:eightbit,"sans-serif";background:#eee;}
+@font-face{font-family:eightbit;src:url("../fonts/8-bit-wonder.ttf");}body{font-family:eightbit,"sans-serif";text-align:center;margin:0;padding:0;position:relative;}
+#container{overflow:hidden;font-family:eightbit,"sans-serif";background:url("../img/see.png") bottom center repeat-x;height:100%;width:100%;}
 #logo{min-height:40px;margin:20px 0 30px;background:#999;color:#333;cursor:pointer;}
 button{font-family:eightbit,"sans-serif";background-color:#920;color:#fff;border:none;-webkit-border-radius:3px;border-radius:3px;width:80%;height:60px;font-size:14px;line-height:60px;margin:20px 0;box-shadow:3px 3px 0 #5d1804;cursor:pointer;}button:hover{background-color:#a80303;box-shadow:1px 1px 0 #5d1804;}
 #login-button{font-size:24px;}

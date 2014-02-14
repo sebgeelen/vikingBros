@@ -1,23 +1,46 @@
 'use strict';
 
-var config = require('config');
-var crypto = require('crypto');
+var Q = require('q');
+var facebookSvc = require('../services/facebook');
+//var usersSvc = require('../services/users');
+//var friendsSvc = require('../services/friends');
 
 function getAuthUrl(req, res) {
-  var scope = 'read_insights,manage_pages,read_friendlists';
-  var md5sum = crypto.createHash('md5');
+  res.json(200, facebookSvc.getAuthUrl());
+}
 
-  var result = {
-    authUrl: 'https://www.facebook.com/dialog/oauth' +
-     '?client_id=' + config.facebook.appId +
-      '&redirect_uri=' + config.facebook.redirectUri +
-      '&scope=' + scope +
-      '&state=' + md5sum.update((+ new Date()).toString(36)).digest("hex") // unique id
-  };
+function createUserFromFbCode(req, res) {
+  facebookSvc.fetchToken(req.body.code, function (err, token) {
+    if (err) {
+      res.send(500);
+      return;
+    }
 
-  res.json(200, result);
+    var promises = [
+      Q.ninvoke(facebookSvc, 'getUserInfo', token)
+        .then(function (err, userInfo) {
+          return true;
+        }),
+      Q.ninvoke(facebookSvc, 'getUserFriends', token)
+        .then(function (err, userInfo) {
+          return true;
+        })
+    ];
+
+    Q.all(promises)
+      .then(function (results) {
+        res.json(200, {
+          id: 1,
+          token: token
+        });
+      })
+      .fail(function (err) {
+        res.send(500);
+      });
+  });
 }
 
 module.exports = {
-  getAuthUrl: getAuthUrl
+  getAuthUrl: getAuthUrl,
+  createUserFromFbCode: createUserFromFbCode
 };
