@@ -41,7 +41,6 @@ $(function() {
         console.log("fb url received");
       }
     });
-
   }
 
   // leader board list opener

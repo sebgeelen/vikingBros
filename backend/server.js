@@ -7,7 +7,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(express.compress());
-app.use(express.static(__dirname + '/view'/*, { maxAge: 86400000 } */)); // 1 day max age
+app.use(express.static(__dirname + '/../view'/*, { maxAge: 86400000 } */)); // 1 day max age
 
 app.configure(function () {
 
