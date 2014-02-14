@@ -15,8 +15,8 @@ app.configure(function () {
   var users = require('./routes/users');
 
   // routes
-  app.get('/facebook', facebook.getAuthUrl);
-  app.get('/users/:id', users.getInfo);
+  app.get('/api/facebook', facebook.getAuthUrl);
+  app.get('/api/users/:id', users.getInfo);
 });
 
 app.listen(port);
