@@ -1,5 +1,5 @@
-var getParameterByName;
-getParameterByName = function(name) {
+
+function getParameterByName(name) {
   var regex, regexS, results;
   name    = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
   regexS  = "[\\?&]" + name + "=([^&#]*)";
@@ -10,8 +10,12 @@ getParameterByName = function(name) {
   } else {
     return decodeURIComponent(results[1].replace(/\+/g, " "));
   }
-};
+}
 
+function changeScreenTo(idName) {
+    $('.screen').addClass("hidden-screen");
+    $("#" + idName).removeClass("hidden-screen");
+}
 
 $(function() {
 
@@ -40,15 +44,29 @@ $(function() {
 
   }
 
-  // login button
-  $('#login-button').on('click', function(e) {
+  // leader board list opener
+
+  $('#leaderboard-screen h2').on('click', function(e) {
     e.preventDefault();
+    $(".lb-list").addClass("hidden-list");
+    $(this).next().removeClass("hidden-list");
+  });
 
-    console.log('login click');
-
-    $('.screen').addClass("hidden-screen");
-    $("#menu-screen").removeClass("hidden-screen");
-
+  //  button
+  $('#login-button, #logo').on('click', function(e) {
+    e.preventDefault();
+    changeScreenTo('menu-screen');
+  });
+  $('#play-button').on('click', function(e) {
+    e.preventDefault();
+    changeScreenTo('game-screen');
+  });
+  $('#lb-button').on('click', function(e) {
+    e.preventDefault();
+    changeScreenTo('leaderboard-screen');
+  });
+  $('#credit-button').on('click', function(e) {
+    window.location.href = 'https://mobilevikings.com/';
   });
 
 });

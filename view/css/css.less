@@ -19,6 +19,7 @@ body {
 #container {
   width: 320px;
   height: 480px;
+  overflow: hidden;
   font-family: eightbit, "sans-serif";
   background: #eee;
 }
@@ -26,9 +27,10 @@ body {
 /* ------- logo */
 #logo {
   min-height: 40px;
-  margin: 20px 0 60px;
+  margin: 20px 0 30px;
   background: #999;
   color: #333;
+  cursor: pointer;
 }
 
 /* ------- UI components */
@@ -40,7 +42,7 @@ button {
   .radius();
   width: 80%;
   height: 60px;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 60px;
   margin: 20px 0;
   box-shadow: 3px 3px 0 #5d1804;
@@ -50,9 +52,61 @@ button {
     box-shadow: 1px 1px 0 #5d1804;
   }
 }
+#login-button {
+  font-size: 24px;
+}
 
 /* -------- screen container */
 .hidden-screen {
   display: none !important;
 }
 
+/* leader boards */
+h1 {
+  font-size: 18px;
+  color: #333
+}
+
+h2 {
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #920;
+  padding: 12px;
+  &:hover {
+    background-color: #a80303;
+  }
+}
+
+ul {
+  text-align: left;
+  padding: 0;
+  margin: 8px 0 16px;
+  list-style-type: none;
+  overflow: hidden;
+
+  -webkit-transition: height .2s;
+          transition: height .2s;
+
+  height: 138px;
+  &.hidden-list {
+    height: 0;
+    margin: 0;
+  }
+}
+
+li {
+  padding-bottom: 4px;
+  margin: 0 5% 4px;
+  border-bottom: 2px solid #333;
+  color: #333;
+}
+li span{
+  display: inline-block;
+  &:first-child {
+    width: 80%;
+  }
+  &:last-child {
+    width: 20%;
+  }
+}
