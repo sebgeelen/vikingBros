@@ -14,7 +14,7 @@ function getInfo(userId, callback){
 			}
 			connection.release();
 			callback(null, rows);
-		});			
+		});
 	})
 }
 
@@ -32,7 +32,7 @@ function setInfo(userData, userId, callback){
 			}
 			connection.release();
 			callback(null, rows);
-		});			
+		});
 	})
 }
 
@@ -50,11 +50,12 @@ function createInfo(userData, callback){
 			}
 			connection.release();
 			callback(null, rows);
-		});			
+		});
 	})
 }
 
-function getInfoByFbId(userFbId, callback){
+function getInfoByFbId(userFbId, callback) {
+	console.log('GET FB INFO');
 	mysql.getConnection(function(err, connection){
 		if (err){
 			callback(err, null);
@@ -67,7 +68,7 @@ function getInfoByFbId(userFbId, callback){
 			}
 			connection.release();
 			callback(null, rows);
-		});			
+		});
 	})
 }
 
@@ -76,4 +77,5 @@ module.exports = {
   getInfo: getInfo,
   setInfo: setInfo,
   createInfo: createInfo,
+  getInfoByFbId: getInfoByFbId
 };

@@ -12,14 +12,15 @@ function getAuthUrl(req, res) {
 function createUserFromFbCode(req, res) {
   facebookSvc.fetchToken(req.body.code, function (err, token) {
     if (err) {
-      res.send(500);
+      res.send(500, err);
       return;
     }
-
     Q.ninvoke(facebookSvc, 'getUserInfo', token)
       .then(function (userFbInfo) {
-        Q.ninvoke(usersSvc, 'getByFbId', userFbInfo.id)
+        console.log('USER INFO: %j', userFbInfo);
+        Q.ninvoke(usersSvc, 'getInfoByFbId', userFbInfo.id)
           .then(function (user) {
+            console.log('USER: %j', user);
             if (user !== null) {
               return user;
             }
@@ -30,6 +31,7 @@ function createUserFromFbCode(req, res) {
             };
             return Q.ninvoke(usersSvc, 'createInfo', userData)
               .then(function (users) {
+                console.log('USERS: %j', users);
                 user = users[0];
                 return Q.ninvoke(facebookSvc, 'getUserFriends', token);
               })
