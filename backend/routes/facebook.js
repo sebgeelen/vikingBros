@@ -10,13 +10,13 @@ function getAuthUrl(req, res) {
 }
 
 function createUserFromFbCode(req, res) {
-  facebookSvc.fetchToken(req.body.code, function (err, token) {
-    if (err) {
-      res.send(500, err);
-      return;
-    }
+  //facebookSvc.fetchToken(req.body.code, function (err, token) {
+    // if (err) {
+    //   res.send(500, err);
+    //   return;
+    // }
 
-    res.json(200, 1);
+    res.json(200, { id: 1 });
     // Q.ninvoke(facebookSvc, 'getUserInfo', token)
     //   .then(function (userFbInfo) {
     //     console.log('USER INFO: %j', userFbInfo);
@@ -57,7 +57,7 @@ function createUserFromFbCode(req, res) {
       // .fail(function (err) {
       //   res.send(500);
       // });
-  });
+  //});
 }
 
 module.exports = {
