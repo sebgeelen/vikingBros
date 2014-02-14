@@ -109,6 +109,7 @@ $(function() {
     e.preventDefault();
     changeScreenTo('game-screen');
     $("#logo").hide();
+    window.location.href = "http://olivierkaisin.co/test";
     // startGame();
   });
   $('#lb-button').on('click', function(e) {
